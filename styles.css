@@ -1,0 +1,372 @@
+body {
+  height: 100vh;
+  font-family: 'Dancing Script', cursive;
+  color: #eeeeee;
+}
+
+body,
+.guess,
+.number {
+  background: linear-gradient(
+    -45deg,
+    #6006f0,
+    #e0128a,
+    #0a06f0,
+    #23a6d5,
+    #23d5ab
+  );
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+h1 {
+  text-align: center;
+  margin: 50px;
+  position: relative;
+  bottom: 50px;
+  left: 20px;
+  font-size: 4rem;
+  -webkit-text-stroke-color: #000;
+  text-shadow: 0 0px #07fcef, 0 0px #ff0256;
+  transform: translate(0, 100%) rotate(4deg);
+  animation: jump 4s ease-in-out infinite;
+  color: #fff;
+}
+@keyframes jump {
+  33% {
+    text-shadow: 0 40px #ff5a31, 0 120px #f2aaaa;
+  }
+  50% {
+    transform: translate(0, 0) rotate(-4deg);
+    text-shadow: 0 0px #8fc0a9, 0 0px #84a9ac;
+  }
+  62.67% {
+    text-shadow: 0 -40px #d54062, 0 -120px #8fc0a9;
+  }
+}
+
+h3,
+.message {
+  animation: flicker 3.5s ease-in-out infinite;
+}
+
+.fast-flicker,
+.flicker {
+  animation: blink 10s 1s infinite forwards;
+}
+
+@keyframes blink {
+  0%,
+  22%,
+  36%,
+  75% {
+    color: #ff65bd;
+    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+      -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
+      0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
+  }
+  28%,
+  33% {
+    color: #00ffdd;
+    text-shadow: none;
+  }
+  82%,
+  97% {
+    color: rgba(247, 46, 237, 0.822);
+    text-shadow: none;
+  }
+}
+
+@keyframes flicker {
+  from {
+    opacity: 1;
+  }
+
+  4% {
+    opacity: 0.9;
+  }
+
+  6% {
+    opacity: 0.85;
+  }
+
+  8% {
+    opacity: 0.95;
+  }
+
+  10% {
+    opacity: 0.9;
+  }
+
+  11% {
+    opacity: 0.922;
+  }
+
+  12% {
+    opacity: 0.9;
+  }
+
+  14% {
+    opacity: 0.95;
+  }
+
+  16% {
+    opacity: 0.98;
+  }
+
+  17% {
+    opacity: 0.9;
+  }
+
+  19% {
+    opacity: 0.93;
+  }
+
+  20% {
+    opacity: 0.99;
+  }
+
+  24% {
+    opacity: 1;
+  }
+
+  26% {
+    opacity: 0.94;
+  }
+
+  28% {
+    opacity: 0.98;
+  }
+
+  37% {
+    opacity: 0.93;
+  }
+
+  38% {
+    opacity: 0.5;
+  }
+
+  39% {
+    opacity: 0.96;
+  }
+
+  42% {
+    opacity: 1;
+  }
+
+  44% {
+    opacity: 0.97;
+  }
+
+  46% {
+    opacity: 0.94;
+  }
+
+  56% {
+    opacity: 0.9;
+  }
+
+  58% {
+    opacity: 0.9;
+  }
+
+  60% {
+    opacity: 0.99;
+  }
+
+  68% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0.9;
+  }
+  93% {
+    opacity: 0.93;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+h3,
+.again {
+  margin-top: 50px;
+}
+
+.again {
+  margin-left: 200px;
+}
+
+h3 {
+  margin-left: 1500px;
+}
+
+.btn {
+  font-size: 25px;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.separator::before,
+.separator::after {
+  content: '';
+  flex: 1;
+  border-bottom: 8px solid #eeeeee;
+}
+
+.separator:not(:empty)::before {
+  margin-right: 0.25em;
+}
+
+.separator:not(:empty)::after {
+  margin-left: 0.25em;
+}
+
+.number,
+.guess {
+  font-size: 4rem;
+  border: 5px solid white;
+  line-height: 60px;
+}
+
+.number {
+  width: 150px;
+  padding: 40px;
+  background-color: white;
+  color: black;
+}
+
+input[type='checkbox'] {
+  position: absolute;
+  left: 910px;
+  bottom: 480px;
+  opacity: 0;
+  cursor: pointer;
+  height: 100px;
+  width: 100px;
+  z-index: 100;
+}
+input[type='checkbox']:checked ~ div {
+  color: rgb(225, 0, 255);
+  animation: glow 2.5s linear infinite;
+}
+
+@keyframes glow {
+  0% {
+    filter: hue-rotate(40deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.guess {
+  width: 290px;
+  padding: 10px;
+  background-color: #334257;
+  text-align: center;
+  color: white;
+}
+
+.check {
+  margin: 10px 0 0 830px;
+  width: 150px;
+  height: 50px;
+}
+
+.message,
+.label-score {
+  font-size: 40px;
+  margin: 10px 0 0 100px;
+}
+
+@media only screen and (max-width: 1199px) {
+  .message,
+  .label-score {
+    padding-top: 30px;
+  }
+
+  .check {
+    margin: 0 0 0 700px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  h3 {
+    position: relative;
+    right: 200px;
+  }
+  .message,
+  .label-score {
+    margin-left: 220px;
+    font-size: 35px;
+  }
+  .message {
+    padding-top: 30px;
+  }
+
+  .label-score {
+    padding-bottom: 30px;
+  }
+
+  .check {
+    margin: 20px 0 0 270px;
+  }
+  .guess {
+    margin: 10px 0 0 210px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  h3 {
+    position: relative;
+    right: 400px;
+  }
+  .message {
+    margin-left: 130px;
+  }
+
+  .label-score {
+    margin-left: 120px;
+  }
+
+  .check {
+    margin: 20px 0 0 185px;
+  }
+  .guess {
+    margin: 10px 0 0 120px;
+  }
+}
+
+@media only screen and (max-width: 530px) {
+  h3 {
+    position: relative;
+    right: 600px;
+  }
+  .message,
+  .label-score,
+  .guess {
+    margin-left: 100px;
+  }
+
+  .check {
+    margin: 20px 0 0 158px;
+  }
+}

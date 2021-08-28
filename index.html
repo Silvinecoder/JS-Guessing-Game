@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess My Number</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="https://img.icons8.com/bubbles/50/000000/question-mark.png"/>
+  </head>
+  <body>
+    <section class="top">
+      <button class="again btn btn-light">Again!</button>
+      <audio id="audio" src="myaudio.mp3"></audio>
+      <h3>(<span class="fast-flicker">Between  1-30</span>)</h3>
+      <h1>Guess My Number!</h1>
+      <div class="separator">
+          <input type="checkbox"/>
+          <div class="number">?</div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-8">
+          <section class="right">
+            <p class="message col-sm-12 col-xs-12">Guess the number...</p>
+            <p class="label-score col-sm-12 col-xs-12">
+              Score To Beat: <span class="score">💪 20</span>
+            </p>
+            <p class="label-score col-sm-12 col-xs-12">
+              HighScore: <span class="highScore">🏆 0</span>
+            </p>
+          </section>
+        </div>
+        <section class="left">
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <section class="left">
+              <input type="input" class="guess" />
+            </section>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <button class="btn btn-light check">check!</button>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
