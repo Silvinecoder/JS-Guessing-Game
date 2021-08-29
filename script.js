@@ -62,11 +62,6 @@ soundBtn.addEventListener('click', () => {
   myAudio.play();
 });
 
-const number = Math.floor(Math.random() * 20) + 1; //Number between 1 and 20
-
-let score = 30; // Decreasing and Increasing the Score
-let highScore = 0; //highScore is 0
-
 const displayMessage = function (message) {
   document.querySelector('.message').textContent = message;
 };
@@ -84,6 +79,10 @@ const changeColor = color => {
   document.querySelector('.guess').style.backgroundColor = color;
 };
 
+let number = Math.trunc(Math.random() * 30) + 1; //Number between 1 and 20
+let score = 30; // Decreasing and Increasing the Score
+let highScore = 0; //highScore is 0
+
 document.querySelector('.check').addEventListener('click', function () {
   const guess = Number(document.querySelector('.guess').value); //First we convert the string that will be inputted into a number since we have to generate a random number and compare if the number the user inputted is correct
 
@@ -99,6 +98,11 @@ document.querySelector('.check').addEventListener('click', function () {
     To select a property like background-color = instead in js we type backgroundColor
     */
     document.querySelector('.number').textContent = number; //The secret number will show if the player guesses correctly
+
+    //document.getElementById('checkbox').checked = true;
+
+    document.querySelector('.number').style.animation =
+      'glow 2.5s linear infinite';
 
     if (score > highScore) {
       //If the score is greater than the highScore
@@ -120,10 +124,13 @@ document.querySelector('.check').addEventListener('click', function () {
 
 // resetting the values
 document.querySelector('.again').addEventListener('click', function () {
+  score = 30;
+  number = Math.trunc(Math.random() * 30) + 1;
   displayScore(20);
-  document.querySelector('.guess').value = null;
   displayMessage('Guess Again?');
-  changeColor('#334257');
   document.querySelector('.number').textContent = '?';
+  document.querySelector('.guess').value = '';
+  changeColor('#334257');
   document.querySelector('.message').style.animationName = null;
+  document.querySelector('.number').style.animation = null;
 });
