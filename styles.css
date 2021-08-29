@@ -250,22 +250,8 @@ h3 {
   width: 150px;
   padding: 40px;
   background-color: white;
-  color: black;
-}
-
-input[type='checkbox'] {
-  position: absolute;
-  left: 910px;
-  bottom: 480px;
-  opacity: 0;
-  cursor: pointer;
-  height: 100px;
-  width: 100px;
-  z-index: 100;
-}
-input[type='checkbox']:checked ~ div {
   color: rgb(225, 0, 255);
-  animation: glow 2.5s linear infinite;
+  font-size: 70px;
 }
 
 @keyframes glow {
